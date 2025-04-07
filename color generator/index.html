@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Palette Generator</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Palette Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Color Palette Generator</h1>
-  <div class="palette" id="palette"></div>
-  <button id="generateBtn">Generate Palette</button>
-
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Palette Generator</h1>
+        <div class="controls">
+            <button id="generate-btn">Generate Palette</button>
+            <div class="slider-container">
+                <label for="color-count">Colors:</label>
+                <input type="range" id="color-count" min="3" max="8" value="5">
+                <span id="count-value">5</span>
+            </div>
+        </div>
+        <div id="palette-container" class="palette-container"></div>
+        <div class="footer">
+            <p>Click on a color to copy its HEX code</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
