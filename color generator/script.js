@@ -1,43 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const paletteContainer = document.getElementById('palette');
-    const generateBtn = document.getElementById('generateBtn');
+  const generateBtn = document.getElementById('generate-btn');
+  const colorCount = document.getElementById('color-count');
+  const countValue = document.getElementById('count-value');
+  const paletteContainer = document.getElementById('palette-container');
   
-    function getRandomColor() {
-      const hue = Math.floor(Math.random() * 360);
-      const saturation = 60 + Math.floor(Math.random() * 30); // 60-90%
-      const lightness = 40 + Math.floor(Math.random() * 20); // 40-60%
-      return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-    }
-  
-    function generatePalette(count = 5) {
-      paletteContainer.innerHTML = '';
-      for (let i = 0; i < count; i++) {
-        const color = getRandomColor();
-        const colorBox = document.createElement('div');
-        colorBox.className = 'color-box';
-        colorBox.style.backgroundColor = color;
-  
-        const colorCode = document.createElement('div');
-        colorCode.className = 'color-code';
-        colorCode.textContent = color;
-  
-        // Add click to copy functionality
-        colorBox.addEventListener('click', function() {
-          navigator.clipboard.writeText(color).then(() => {
-            colorCode.textContent = 'Copied!';
-            setTimeout(() => {
-              colorCode.textContent = color;
-            }, 1000);
-          });
-        });
-  
-        colorBox.appendChild(colorCode);
-        paletteContainer.appendChild(colorBox);
-      }
-    }
-  
-    generateBtn.addEventListener('click', generatePalette);
-  
-    // Initial load
-    generatePalette();
+  // Update the displayed count when slider changes
+  colorCount.addEventListener('input', function() {
+      countValue.textContent = this.value;
   });
+  
+  // Generate palette when button is clicked
+  generateBtn.addEventListener('click', generatePalette);
+  
+  // Generate initial palette
+  generatePalette();
+  
+  function generatePalette() {
+      const count = parseInt(colorCount.value);
+      paletteContainer.innerHTML = '';
+      
+      for (let i = 0; i < count; i++) {
+          const color = generateRandomColor();
+          const colorElement = document.createElement('div');
+          colorElement.className = 'color';
+          colorElement.style.backgroundColor = color;
+          
+          const colorCode = document.createElement('span');
+          colorCode.className = 'color-code';
+          colorCode.textContent = color;
+          
+          colorElement.appendChild(colorCode);
+          paletteContainer.appendChild(colorElement);
+          
+          // Add click event to copy color code
+          colorElement.addEventListener('click', function() {
+              navigator.clipboard.writeText(color).then(() => {
+                  const originalText = colorCode.textContent;
+                  colorCode.textContent = 'Copied!';
+                  setTimeout(() => {
+                      colorCode.textContent = originalText;
+                  }, 1000);
+              });
+          });
+      }
+  }
+  
+  function generateRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+  }
+});
