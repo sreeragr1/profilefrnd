@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Journal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Micro Journal</h1>
+        <p>A simple journaling app with daily prompts and character limits.</p>
+        
+        <div class="journal-app">
+            <p class="journal-prompt" id="journalPrompt"></p>
+            <textarea id="journalEntry" maxlength="200" placeholder="Write your journal entry (max 200 chars)..."></textarea>
+            <div class="counter"><span id="charCount">0</span>/200</div>
+            <button id="saveEntry">Save Entry</button>
+            <div class="entries" id="journalEntries"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

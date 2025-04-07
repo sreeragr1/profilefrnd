@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <img src="profile.jpg" alt="Your Name" class="profile-img">
+                <h1>Shyamgokul</h1>
+                <p>Creative Developer</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I'm a passionate developer who creates simple yet innovative solutions. My focus is on clean design, intuitive functionality, and meaningful user experiences.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <a href="interactiveartgenerator" class="project-card">
+                        <div class="project-info">
+                            <h3>Interactive Art Generator</h3>
+                            <p>A canvas-based tool that creates unique digital art pieces based on user input.</p>
+                            <span class="project-link">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 2 -->
+                    <a href="taskmanger" class="project-card">
+                        <div class="project-info">
+                            <h3>Minimalist Task Manager</h3>
+                            <p>A distraction-free to-do app with only the essential features.</p>
+                            <span class="project-link">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 3 -->
+                    <a href="color generator" class="project-card">
+                        <div class="project-info">
+                            <h3>Color Palette Generator</h3>
+                            <p>Generates harmonious color schemes from a single base color.</p>
+                            <span class="project-link">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 4 -->
+                    <a href="codegenerator" class="project-card">
+                        <div class="project-info">
+                            <h3>Code Manager</h3>
+                            <p>A web app that combines different ambient sounds to create focus environments.</p>
+                            <span class="project-link">View Project →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Project 5 -->
+                    <a href="microjournel" class="project-card">
+                        <div class="project-info">
+                            <h3>Micro Journal</h3>
+                            <p>A simple journaling app with daily prompts and character limits.</p>
+                            <span class="project-link">View Project →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p>Have a project in mind or just want to say hello? Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="shyamgokulm@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://github.com/5hyamgokul"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
